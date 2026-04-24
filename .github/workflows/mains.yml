@@ -1,0 +1,20 @@
+name: Simple Test
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/10 * * * *"   # runs every 10 minutes
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print start
+        run: echo "Workflow started"
+
+      - name: Sleep 10 seconds
+        run: sleep 10
+
+      - name: Print done
+        run: echo "Workflow finished"
